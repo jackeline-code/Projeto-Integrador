@@ -13,5 +13,3 @@ IDE's -> Eclipse e Spring
 Linguagem -> Java
 Banco de Dados -> MySQL
 Aplicativo de teste -> Postman
-
-[![Linkedin](https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/bruno-godinho-562246137)](https://www.linkedin.com/in/bruno-godinho-562246137)
