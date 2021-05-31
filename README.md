@@ -7,10 +7,11 @@ No desenvolvimento deste projeto, realizou-se até o momento a ideia de uma rede
 Ela serve para auxiliar as mulheres que sofrem de agressões físicas ou morais em suas casas ou em qualquer lugar. 
 Também serve para educação de homens e mulheres para viver na sociedade.
 
-=============================================================
-Aplicativos utilizados para o desenvolvimento da rede social
-=============================================================
+**Aplicativos utilizados para o desenvolvimento da rede social**
+
 IDE's -> Eclipse e Spring
 Linguagem -> Java
 Banco de Dados -> MySQL
 Aplicativo de teste -> Postman
+
+[![Linkedin](https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/bruno-godinho-562246137)](https://www.linkedin.com/in/bruno-godinho-562246137)
