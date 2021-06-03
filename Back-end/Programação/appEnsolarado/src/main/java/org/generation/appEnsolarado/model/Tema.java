@@ -18,12 +18,12 @@ public class Tema {
 	
 	@NotNull //o campo tem que ser preenchido
 	@Size(min = 3, max = 100) //tamanho do tema
-	private String nometema;
+	private String nomeTema;
 	
 	@Size(min = 3, max = 255) //tamanho da descrição
 	private String descricao;
 	
-	private int quantidadePostes;
+	private int quantidadePosts;
 
 	//Getters and Setters
 	public long getId() {
@@ -35,11 +35,11 @@ public class Tema {
 	}
 
 	public String getNomeTema() {
-		return nometema;
+		return nomeTema;
 	}
 
-	public void setNomeTema(String nometema) {
-		this.nometema = nometema;
+	public void setNomeTema(String nomeTema) {
+		this.nomeTema = nomeTema;
 	}
 
 	public String getDescricao() {
@@ -50,11 +50,11 @@ public class Tema {
 		this.descricao = descricao;
 	}
 
-	public int getQuantidadePostes() {
-		return quantidadePostes;
+	public int getQuantidadePosts() {
+		return quantidadePosts;
 	}
 
-	public void setQuantidadePostes(int quantidadePostes) {
-		this.quantidadePostes = quantidadePostes;
+	public void setQuantidadePosts(int quantidadePosts) {
+		this.quantidadePosts = quantidadePosts;
 	}
 }
