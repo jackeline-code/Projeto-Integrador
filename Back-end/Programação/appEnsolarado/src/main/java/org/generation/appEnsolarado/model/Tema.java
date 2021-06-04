@@ -1,12 +1,18 @@
 package org.generation.appEnsolarado.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity //entidade, faz com que o programa trabalhe com tabelas
 @Table(name = "tb_tema") //criação da tabela tema no mysql
@@ -24,6 +30,10 @@ public class Tema {
 	private String descricao;
 	
 	private int quantidadePosts;
+	
+	@OneToMany(mappedBy="tema", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("tema")
+	private List<Postagem> postagem;
 
 	//Getters and Setters
 	public long getId() {
@@ -56,5 +66,13 @@ public class Tema {
 
 	public void setQuantidadePosts(int quantidadePosts) {
 		this.quantidadePosts = quantidadePosts;
+	}
+	
+	public List<Postagem> getPostagem() {
+		return postagem;
+	}
+
+	public void setPostagem(List<Postagem> postagem) {
+		this.postagem = postagem;
 	}
 }
