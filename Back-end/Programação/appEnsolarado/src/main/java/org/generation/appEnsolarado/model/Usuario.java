@@ -28,32 +28,28 @@ public class Usuario {
 	private String nomeCompleto;
 
 	@NotNull
-<<<<<<< HEAD
-	@Size(min = 5, max = 30 )
-=======
 	@Size(min = 2, max = 40)
 	private String usuario;
 
 	@NotNull
 	@Size(min = 5, max = 30)
->>>>>>> 06ac49ea5c416a15f21e79c16c747a8954ef0b5e
 	private String email;
 
 	@NotNull
-	@Size(min = 6, max = 15)
+	@Size(min = 6)
 	private String senha;
 
-	@NotNull
+	//@NotNull
 	private String genero;
 
-	@NotNull
+	//@NotNull
 	private Date dataNascimento;
 
 	private String fotoPerfil;
 
 	private String numTelefone;
 
-	@NotNull
+	//@NotNull
 	private String endereco;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
@@ -139,8 +135,6 @@ public class Usuario {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
-<<<<<<< HEAD
-=======
 
 	public String getUsuario() {
 		return usuario;
@@ -149,6 +143,4 @@ public class Usuario {
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-
->>>>>>> 06ac49ea5c416a15f21e79c16c747a8954ef0b5e
 }
