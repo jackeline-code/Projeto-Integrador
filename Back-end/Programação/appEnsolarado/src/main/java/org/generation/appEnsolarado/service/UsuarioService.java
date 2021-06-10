@@ -24,10 +24,9 @@ public class UsuarioService {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder ();
 		String senhaEncoder = encoder.encode(usuario.getSenha());
 		usuario.setSenha(senhaEncoder);
-		return repository.save(usuario);
-		
-				
+		return repository.save(usuario);		
 	}
+
 	public Optional<UsuarioLogin> Logar(Optional<UsuarioLogin> user){
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		Optional<Usuario> usuario = repository.findByUsuario(user.get().getUsuario());
@@ -40,13 +39,21 @@ public class UsuarioService {
 				user.get().setToken(authHeader);
 				user.get().setNomeCompleto(usuario.get().getNomeCompleto());
 				return user;
-				
-			}
-				
-				
+			}	
 		}
 		return null;
 	}
 	
+	public Optional<Usuario> atualizarSenha(Usuario usuario){
 
+		/* Criprtografa a senha*/
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String senhaEncoder = encoder.encode(usuario.getSenha());
+	
+		/* Atualiza a senha no objeto usuario, ou seja,
+		substitui a senha digitada pela senha criptografada */
+		usuario.setSenha(senhaEncoder);
+		
+		return Optional.of(repository.save(usuario));
+	}
 }
