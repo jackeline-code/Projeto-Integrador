@@ -35,7 +35,6 @@ public class PostagemController {
 		return repository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
-		
 	}
 	
 	@GetMapping("/postagem/{postagem}")
@@ -57,6 +56,4 @@ public class PostagemController {
 	public void Delete (@PathVariable long id) {
 		repository.deleteById(id);
 	}
-	
-	
 }

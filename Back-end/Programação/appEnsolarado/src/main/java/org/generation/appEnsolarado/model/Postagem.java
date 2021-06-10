@@ -23,15 +23,16 @@ public class Postagem {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private long id;
 	
+	//Possivel alteração no tamanho maximo
 	@NotNull
-	@Size(min=5, max=3000) //Possivel alteração no tamanho maximo 
+	@Size(min = 5, max = 3000) 
 	private String postagem;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date dataPostagem= new java.sql.Date(System.currentTimeMillis());
+	private Date dataPostagem = new java.sql.Date(System.currentTimeMillis());
 	
 	@NotNull
-	@Size(min=3, max=255)
+	@Size(min = 3, max = 255)
 	private String titulo;
 	
 	private int likes;
@@ -109,8 +110,4 @@ public class Postagem {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	
-	
-	
 }

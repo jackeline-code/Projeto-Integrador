@@ -28,11 +28,11 @@ public class Usuario {
 	private String nomeCompleto;
 	
 	@NotNull
-	@Size(min =5, max =30 )
+	@Size(min = 5, max = 30 )
 	private String email;
 	
 	@NotNull
-	@Size(min =6, max = 15)
+	@Size(min = 6, max = 15)
 	private String senha;
 	
 	@NotNull
@@ -131,8 +131,4 @@ public class Usuario {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
-	
-	
-	
-
 }
