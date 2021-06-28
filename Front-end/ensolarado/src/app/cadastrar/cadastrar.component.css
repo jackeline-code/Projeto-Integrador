@@ -1,5 +1,5 @@
 .bg{
-    background-image: url('https://i.imgur.com/KZeQpcs.jpg');
+    background-image: url('https://i.imgur.com/m1eHmXd.jpg');
     background-repeat: no-repeat;
     min-height: 695px;
     background-position: center;
@@ -7,5 +7,11 @@
 }
 
 .cor1{
-    background-color: rgb(252, 206, 80);
+    background-color: rgb(255, 255, 254);
+}
+
+.sombra:focus{
+    border-style: none;
+    box-shadow: 0 0 1em;
+    color: rgb(221, 221, 1);
 }
