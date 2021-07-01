@@ -20,7 +20,7 @@ entrar(userLogin:UserLogin): Observable<UserLogin>{
 }
 
 cadastrar(user: User): Observable<User>{
-  return.this.http.post<User>('https://appensolarado.herokuapp.com/usuarios/cadastrar', user)
+  return this.http.post<User>('https://appensolarado.herokuapp.com/usuarios/cadastrar', user)
 }
 
 logado(){
