@@ -1,0 +1,5 @@
+.borda:focus{
+    border: none;
+    box-shadow: 0 0 1em;
+    color: yellow;
+}

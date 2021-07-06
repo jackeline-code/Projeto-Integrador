@@ -19,6 +19,10 @@ ul.social-network li{
     color: #3b5998;
 }
 
+.fa-twitter-square:hover{
+    color: #00acee;
+}
+
 .fa-instagram:hover{
     color: #C13584;
 }
