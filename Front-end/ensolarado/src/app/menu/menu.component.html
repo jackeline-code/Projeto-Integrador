@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light cor">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,32 +11,24 @@
                         class="img-fluid rounded-circle">
                 </li>
                 <li class="nav-item pl-3">
-                    <p class="m-0 font-weight-bold text-warning fs-16">{{nome}}</p>
-                </li>
-                <li class="nav-item pl-3">
-                    <a href="">
-                        <p class="text-white fs-16 m-0">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        </p>
-                    </a>
+                    <p class="m-0 font-weight-bold text-dark fs-16">{{nome}}</p>
                 </li>
             </ul>
 
             <form class="d-flex mr-5">
-                <input class="form-control me-2 mr-2 borda" type="search" placeholder="Pesquisar"
+                <input class="form-control me-2 mr-2 borda" style="background-color: rgba(0, 0, 255, 0);" type="search" placeholder="Pesquisar"
                     aria-label="Pesquisar">
-                <button class="btn btn-outline-warning mr-5" type="submit">Pesquisar</button>
             </form>
 
 
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ml-5">
-                <button class="btn btn-light text-warning" data-toggle="modal" data-target="#novaPostagem">Postagem</button>
+                <button class="btn text-dark" data-toggle="modal" data-target="#novaPostagem">Postagem</button>
 
                 <li class="nav-item">
-                    <a (click)='sobre()' class="nav-link text-warning" routerLink="/Sobre">Sobre</a>
+                    <a (click)='sobre()' class="nav-link text-dark" routerLink="/Sobre">Sobre</a>
                 </li>
                 <li class="nav-item">
-                    <a (click)='sair()' class="nav-link text-warning" routerLink="/entrar">Sair</a>
+                    <a (click)='sair()' class="nav-link text-dark" routerLink="/entrar">Sair</a>
                 </li>
             </ul>
 
@@ -53,7 +45,7 @@
 <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content text-warning">
+        <div class="modal-content text-dark cor">
             <div class="modal-header">
                 <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
             </div>
@@ -61,19 +53,19 @@
                 <!-- Formulário dentro do modal -->
                 <div class="form-group">
                     <label for="titulo">Título</label>
-                    <input [(ngModel)]='postagem.titulo' type="text" class="form-control bs borda" id="titulo" placeholder="Digite o título">
+                    <input [(ngModel)]='postagem.titulo' type="text" style="background-color: rgba(240, 248, 255, 0);" class="form-control bs borda" id="titulo" placeholder="Digite o título">
                 </div>
                 <div class="form-group">
                     <label for="texto">Texto</label>
-                    <textarea [(ngModel)]='postagem.postagem' name="texto" class="form-control bs borda" id="texto" rows="3" placeholder="Digite sua postagem"></textarea>
+                    <textarea [(ngModel)]='postagem.postagem' name="texto" style="background-color: rgba(240, 248, 255, 0);" class="form-control bs borda" id="texto" rows="3" placeholder="Digite sua postagem"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="midia">Mídia</label>
-                    <input [(ngModel)]='postagem.midia' type="text" class="form-control bs borda" id="midia" placeholder="Digite o link da foto ou vídeo">
+                    <input [(ngModel)]='postagem.midia' type="text" style="background-color: rgba(240, 248, 255, 0);" class="form-control bs borda" id="midia" placeholder="Digite o link da foto ou vídeo">
                 </div>
-                <div class="form-group">
+                <div class="form-group" >
                     <label for="tema">Escolha um tema:</label>
-                    <select name="tema" id="tema" class="form-control bs borda">
+                    <select name="tema" id="tema" class="form-control bs borda" style="background-color: rgba(240, 248, 255, 0);">
                         <option value="" *ngFor='let tema of listaTemas'>{{tema.nomeTema}}</option>
                     </select>
                 </div>
@@ -81,7 +73,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-outline-warning" (click)='cadastrar()'>Publicar</button>
+                <button type="button" class="btn btn-outline-light" (click)='cadastrar()'>Publicar</button>
             </div>
         </div>
     </div>

@@ -11,7 +11,6 @@ ul.social-network li{
 
 .fa{
     font-size: 35pt;
-    color: rgb(255, 227, 70);
     padding: 10px;
 }
 
@@ -24,7 +23,12 @@ ul.social-network li{
 }
 
 .fa-instagram:hover{
-    color: #C13584;
+    text-transform: uppercase;
+    background: rgb(81,91,212);
+    background: linear-gradient(188deg, rgba(81,91,212,1) 10%, rgba(129,52,255,1) 22%, rgba(221,42,123,1) 55%, rgba(254,218,119,1) 85%, rgba(245,133,41,1) 91%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .fa-linkedin-square:hover{
@@ -33,4 +37,18 @@ ul.social-network li{
 
 .fa-github-square:hover{
     color: black;
+}
+
+.gradient{
+    text-transform: uppercase;
+    background: rgb(255,145,0);
+    background: linear-gradient(90deg, rgba(255,145,0,1) 0%, rgba(253,209,45,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.gradient2{
+    background: rgb(255,145,0);
+    background: linear-gradient(90deg, rgba(255,145,0,1) 0%, rgba(253,209,45,1) 100%);
 }

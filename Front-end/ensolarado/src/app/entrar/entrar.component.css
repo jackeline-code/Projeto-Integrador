@@ -19,3 +19,8 @@
 .raio{
     border-radius: 1em;
 }
+
+.btn-outline-warning:hover{
+    background: rgb(255,145,0);
+    background: linear-gradient(90deg, rgba(255,145,0,1) 0%, rgba(253,209,45,1) 100%);
+}
