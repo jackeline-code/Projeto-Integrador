@@ -12,15 +12,20 @@
                 </li>
                 <li class="nav-item pl-3">
                     <p class="m-0 font-weight-bold text-dark fs-16">{{nome}}</p>
+
+                </li>
+                <li class="nav-item pl-3 justify-content-start">
+                    <a [routerLink]="['/user-edit',id]">
+                        <p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+                    </a>
                 </li>
             </ul>
 
             <div class="box">
                 <form name="search">
-                    <input type="text" class="input" name="txt"
-                    onmouseout="document.search.txt.value = ''">
+                    <input type="text" class="input" name="txt" onmouseout="document.search.txt.value = ''">
                 </form>
-                    <i class="fa fa-search" aria-hidden="true"></i>
+                <i class="fa fa-search" aria-hidden="true"></i>
             </div>
 
 
@@ -56,19 +61,24 @@
                 <!-- Formulário dentro do modal -->
                 <div class="form-group">
                     <label for="titulo">Título</label>
-                    <input [(ngModel)]='postagem.titulo' type="text" style="background-color: rgba(240, 248, 255, 0);" class="form-control bs borda" id="titulo" placeholder="Digite o título">
+                    <input [(ngModel)]='postagem.titulo' type="text" style="background-color: rgba(240, 248, 255, 0);"
+                        class="form-control bs borda" id="titulo" placeholder="Digite o título">
                 </div>
                 <div class="form-group">
                     <label for="texto">Texto</label>
-                    <textarea [(ngModel)]='postagem.postagem' name="texto" style="background-color: rgba(240, 248, 255, 0);" class="form-control bs borda" id="texto" rows="3" placeholder="Digite sua postagem"></textarea>
+                    <textarea [(ngModel)]='postagem.postagem' name="texto"
+                        style="background-color: rgba(240, 248, 255, 0);" class="form-control bs borda" id="texto"
+                        rows="3" placeholder="Digite sua postagem"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="midia">Mídia</label>
-                    <input [(ngModel)]='postagem.midia' type="text" style="background-color: rgba(240, 248, 255, 0);" class="form-control bs borda" id="midia" placeholder="Digite o link da foto ou vídeo">
+                    <input [(ngModel)]='postagem.midia' type="text" style="background-color: rgba(240, 248, 255, 0);"
+                        class="form-control bs borda" id="midia" placeholder="Digite o link da foto ou vídeo">
                 </div>
-                <div class="form-group" >
+                <div class="form-group">
                     <label for="tema">Escolha um tema ou Cadastre um novo na aba temas:</label>
-                    <select [(ngModel)]='idTema' (change)='findByIdTema()' name="tema" id="tema" class="form-control bs borda" style="background-color: rgba(240, 248, 255, 0);">
+                    <select [(ngModel)]='idTema' (change)='findByIdTema()' name="tema" id="tema"
+                        class="form-control bs borda" style="background-color: rgba(240, 248, 255, 0);">
                         <option value="{{tema.id}}" *ngFor='let tema of listaTemas'>{{tema.nomeTema}}</option>
                     </select>
                 </div>
@@ -77,7 +87,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-outline-light" data-dismiss="modal" (click)='publicar()'>Publicar</button>
+                <button type="button" class="btn btn-outline-light" data-dismiss="modal"
+                    (click)='publicar()'>Publicar</button>
             </div>
         </div>
     </div>
