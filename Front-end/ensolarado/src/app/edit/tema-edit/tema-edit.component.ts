@@ -13,8 +13,6 @@ export class TemaEditComponent implements OnInit {
 
   tema: Tema = new Tema()
 
-  
-
   constructor(
     private temaService: TemaService,
     private router: Router,
@@ -43,6 +41,4 @@ export class TemaEditComponent implements OnInit {
       this.router.navigate(['/inicio'])
     })
   }
-  
-
 }

@@ -9,23 +9,35 @@ import { Postagem } from '../model/Postagem';
 })
 export class PostagemService {
 
-  
-
   constructor(private http: HttpClient) { }
 
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
+  refreshToken() {
+    this.token = {
+      headers: new HttpHeaders().set('Authorization', environment.token)
+    }
+  }
+
   getAllPostagens(): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>('https://appensolarado.herokuapp.com/postagem', this.token)
+    return this.http.get<Postagem[]>('https://appensolarado2.herokuapp.com/postagem', this.token)
   }
 
   getByIdPostagens(id: number): Observable<Postagem>{
-    return this.http.get<Postagem>(`https://appensolarado.herokuapp.com/postagem/${id}`, this.token)
+    return this.http.get<Postagem>(`https://appensolarado2.herokuapp.com/postagem/${id}`, this.token)
   }
 
   postPostagens(postagem: Postagem): Observable<Postagem>{
-    return this.http.post<Postagem>('https://appensolarado.herokuapp.com/postagem', postagem, this.token)
+    return this.http.post<Postagem>('https://appensolarado2.herokuapp.com/postagem', postagem, this.token)
+  }
+
+  putPostagem(postagem: Postagem): Observable<Postagem>{
+    return this.http.put<Postagem>('https://appensolarado2.herokuapp.com/postagem', postagem, this.token)
+  }
+
+  deletePostagem(id: number){
+    return this.http.delete(`https://appensolarado2.herokuapp.com/postagem/${id}`, this.token)
   }
 }

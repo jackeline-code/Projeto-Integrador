@@ -21,23 +21,23 @@ export class TemaDeleteComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit(){
-    if(environment.token == ''){
+  ngOnInit() {
+    if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }
-    
+
     this.idTema = this.route.snapshot.params['id']
     this.findByIdTema(this.idTema)
   }
 
-  findByIdTema(id: number){
-    this.temaService.getByIdTema(id).subscribe((resp: Tema)=> {
-      this.tema=resp
+  findByIdTema(id: number) {
+    this.temaService.getByIdTema(id).subscribe((resp: Tema) => {
+      this.tema = resp
     })
   }
 
-  apagar(){
-    this.temaService.deleteTema(this.idTema).subscribe(()=>{
+  apagar() {
+    this.temaService.deleteTema(this.idTema).subscribe(() => {
       alert('Tema apagado com sucesso!')
       this.router.navigate(['/inicio'])
     })

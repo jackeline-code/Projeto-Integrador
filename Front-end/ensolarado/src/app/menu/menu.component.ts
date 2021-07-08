@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
+import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
@@ -17,9 +18,9 @@ export class MenuComponent implements OnInit {
 
   nome = environment.nomeCompleto
   foto = environment.fotoPerfil
-  
+
   user: User = new User()
-  idUser= environment.id
+  idUser = environment.id
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
@@ -32,7 +33,8 @@ export class MenuComponent implements OnInit {
   constructor(
     private router: Router,
     private postagemService: PostagemService,
-    private temaService: TemaService
+    private temaService: TemaService,
+    private auth: AuthService
   ) { }
 
   ngOnInit() {
@@ -42,8 +44,8 @@ export class MenuComponent implements OnInit {
     }
 
     this.temaService.refreshToken()
-    this.findAllPostagens()
     this.findAllTemas()
+    this.getAllPostagens()
   }
 
   sair() {
@@ -54,22 +56,13 @@ export class MenuComponent implements OnInit {
     environment.id = 0
   }
 
-  sobre(){
+  sobre() {
     this.router.navigate(['/sobre'])
   }
 
-  findAllPostagens() {
+  getAllPostagens() {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
-    })
-  }
-
-  cadastrar() {
-    this.postagemService.postPostagens(this.postagem).subscribe((resp: Postagem) => {
-      this.postagem = resp
-      alert('Postagem criada com sucesso!')
-      this.findAllPostagens()
-      this.postagem = new Postagem()
     })
   }
 
@@ -79,24 +72,30 @@ export class MenuComponent implements OnInit {
     })
   }
 
-  findByIdTema(){
-    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema)=>{
+  findByIdTema() {
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
       this.tema = resp
     })
   }
 
-  publicar(){
-    this.tema.id= this.idTema
-    this.postagem.tema= this.tema
+  findByIdUser() {
+    this.auth.getByIdUser(this.idUser).subscribe((resp: User) => {
+      this.user = resp
+    })
+  }
 
-    this.user.id= this.idUser
-    this.postagem.usuario=this.user
+  publicar() {
+    this.tema.id = this.idTema
+    this.postagem.tema = this.tema
 
-    this.postagemService.postPostagens(this.postagem).subscribe((resp: Postagem)=>{
-      this.postagem= resp
+    this.user.id = this.idUser
+    this.postagem.usuario = this.user
+
+    this.postagemService.postPostagens(this.postagem).subscribe((resp: Postagem) => {
+      this.postagem = resp
       alert('Postagem realizada com sucesso!')
-      this.postagem= new Postagem()
-      this.findAllPostagens()
+      this.postagem = new Postagem()
+      this.getAllPostagens()
     })
   }
 }

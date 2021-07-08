@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
+import { User } from '../model/User';
+import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
@@ -19,21 +21,26 @@ export class InicioComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
 
- 
+  user: User = new User()
+  idUser = environment.id
 
   constructor(
     private postagemService: PostagemService,
     private router: Router,
-    private temaService: TemaService
+    private temaService: TemaService,
+    private auth: AuthService
   ) { }
 
   ngOnInit() {
+
+    window.scroll(0, 0)
 
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }
 
     this.temaService.refreshToken()
+    this.postagemService.refreshToken()
     this.findAllTemas()
     this.getAllPostagem()
   }
@@ -53,10 +60,15 @@ export class InicioComponent implements OnInit {
     })
   }
 
-  getAllPostagem(){
-    this.postagemService.getAllPostagens().subscribe((resp: Postagem[])=>{
+  getAllPostagem() {
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       this.listaPostagem = resp
+    })
+  }
 
+  findByIdUser(){
+    this.auth.getByIdUser(this.idUser).subscribe((resp: User)=>{
+      this.user = resp
     })
   }
 }
