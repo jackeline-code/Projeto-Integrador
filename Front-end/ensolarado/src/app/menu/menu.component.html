@@ -67,16 +67,17 @@
                     <input [(ngModel)]='postagem.midia' type="text" style="background-color: rgba(240, 248, 255, 0);" class="form-control bs borda" id="midia" placeholder="Digite o link da foto ou vídeo">
                 </div>
                 <div class="form-group" >
-                    <label for="tema">Escolha um tema:</label>
-                    <select name="tema" id="tema" class="form-control bs borda" style="background-color: rgba(240, 248, 255, 0);">
-                        <option value="" *ngFor='let tema of listaTemas'>{{tema.nomeTema}}</option>
+                    <label for="tema">Escolha um tema ou Cadastre um novo na aba temas:</label>
+                    <select [(ngModel)]='idTema' (change)='findByIdTema()' name="tema" id="tema" class="form-control bs borda" style="background-color: rgba(240, 248, 255, 0);">
+                        <option value="{{tema.id}}" *ngFor='let tema of listaTemas'>{{tema.nomeTema}}</option>
                     </select>
                 </div>
+
                 <!-- /Formulário dentro do modal -->
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-outline-light" (click)='cadastrar()'>Publicar</button>
+                <button type="button" class="btn btn-outline-light" data-dismiss="modal" (click)='publicar()'>Publicar</button>
             </div>
         </div>
     </div>

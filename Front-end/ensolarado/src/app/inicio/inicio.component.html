@@ -26,13 +26,16 @@
                 <div class="tab-content" id="myTabContent">
                     <!-- Aba Todas as postagens -->
                     <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
-                        aria-labelledby="todasPostagens-tab" *ngFor='let postagem from listaPostagens'>
+                        aria-labelledby="todasPostagens-tab" *ngFor='let postagem of listaPostagem'>
                         <!-- Cads de postagens -->
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">{{postagem.titulo}}</h5>
                                 <p class="card-text">{{postagem.postagem}}</p>
-                                <p class="card-text"><small class="text-muted">{{postagem.usuario.usuario}</small>
+                            <p class="card-text"><small class="text-muted"> by: {{postagem.usuario.nomeCompleto}}</small>
+                                </p>
+
+                                <p class="card-text"><small class="text-muted">{{postagem.dataPostagem}}</small>
                                 </p>
                             </div>
                             <img src="..." class="card-img-bottom" alt="...">
@@ -43,8 +46,17 @@
 
                     <!-- Aba minhas postagens -->
                     <div class="tab-pane fade" id="minhasPostagens" role="tabpanel"
-                        aria-labelledby="minhasPostagens-tab">Minhas
-                        Postagens
+                        aria-labelledby="minhasPostagens-tab">
+                        
+                        <div class="card mt-5 ">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                            <img class="card-img-bottom" src=".../100px180/" alt="Card image cap">
+                          </div>
+
                     </div>
                     <!-- /Aba minhas postagens -->
 
@@ -91,8 +103,8 @@
                                     <td>{{tema.nomeTema}}</td>
                                     <td>{{tema.descricao}}</td>
                                     <td class="d-flex justify-content-end">
-                                        <button class="btn btn-outline-warning mr-3">Editar</button>
-                                        <button class="btn btn-outline-dark">Apagar</button>
+                                        <button class="btn btn-outline-warning mr-3" [routerLink]="['/tema-edit', tema.id]">Editar</button>
+                                        <button class="btn btn-outline-dark" [routerLink]="['/tema-delete', tema.id]">Apagar</button>
                                     </td>
                                 </tr>
                             </tbody>
