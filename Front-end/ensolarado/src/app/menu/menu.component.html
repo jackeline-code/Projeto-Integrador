@@ -15,10 +15,13 @@
                 </li>
             </ul>
 
-            <form class="d-flex mr-5">
-                <input class="form-control me-2 mr-2 borda" style="background-color: rgba(0, 0, 255, 0);" type="search" placeholder="Pesquisar"
-                    aria-label="Pesquisar">
-            </form>
+            <div class="box">
+                <form name="search">
+                    <input type="text" class="input" name="txt"
+                    onmouseout="document.search.txt.value = ''">
+                </form>
+                    <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
 
 
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ml-5">
@@ -45,7 +48,7 @@
 <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content text-dark cor">
+        <div class="modal-content text-dark teste">
             <div class="modal-header">
                 <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
             </div>

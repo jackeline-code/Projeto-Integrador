@@ -33,11 +33,17 @@ public class UsuarioService {
 		
 		if(usuario.isPresent()) {
 			if (encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
+				
 				String auth = user.get().getUsuario() + ":" + user.get().getSenha();
 				byte[]encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 				String authHeader = "Basic " + new String(encodedAuth);
+				
 				user.get().setToken(authHeader);
 				user.get().setNomeCompleto(usuario.get().getNomeCompleto());
+				user.get().setId(usuario.get().getId());
+				user.get().setFotoPerfil(usuario.get().getFotoPerfil());
+				user.get().setTipo(usuario.get().getTipo());
+				
 				return user;
 			}	
 		}

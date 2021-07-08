@@ -46,13 +46,15 @@ public class Usuario {
 	private Date dataNascimento;
 
 	private String fotoPerfil;
+	
+	private String tipo;
 
 	private String numTelefone;
 
 	//@NotNull
 	private String endereco;
 
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
 
@@ -142,5 +144,13 @@ public class Usuario {
 
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 }

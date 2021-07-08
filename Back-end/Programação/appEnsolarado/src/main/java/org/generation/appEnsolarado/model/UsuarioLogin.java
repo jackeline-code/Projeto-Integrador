@@ -2,11 +2,14 @@ package org.generation.appEnsolarado.model;
 
 public class UsuarioLogin {
 
+	private long id;
 	private String nomeCompleto;
 	private String usuario;
 	private String email;
 	private String senha;
 	private String token;
+	private String fotoPerfil;
+	private String tipo;
 	
 
 	public String getNomeCompleto() {
@@ -47,5 +50,29 @@ public class UsuarioLogin {
 
 	public void setToken(String token) {
 		this.token = token;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+	public void setFotoPerfil(String fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 }
