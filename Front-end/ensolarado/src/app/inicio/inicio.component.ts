@@ -33,7 +33,7 @@ export class InicioComponent implements OnInit {
     private postagemService: PostagemService,
     private router: Router,
     private temaService: TemaService,
-    private auth: AuthService,
+    public auth: AuthService,
     private alertas: AlertasService
   ) { }
 
@@ -43,6 +43,10 @@ export class InicioComponent implements OnInit {
 
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
+    }
+    if(environment.tipo != 'adm'){
+      this.alertas.showAlertInfo('Voce Precisa ser Adm para acessar esta Rota')
+      this.router.navigate(['/inicio'])
     }
 
     this.temaService.refreshToken()

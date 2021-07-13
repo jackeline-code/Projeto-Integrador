@@ -17,7 +17,7 @@
                             Postagens</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link gradient" id="postagemTema-tab" data-toggle="tab" href="#postagemTema"
+                        <a *ngIf='auth.adm()' class="nav-link gradient" id="postagemTema-tab" data-toggle="tab" href="#postagemTema"
                             role="tab" aria-controls="postagemTema" aria-selected="false">Temas</a>
                     </li>
                 </ul>
