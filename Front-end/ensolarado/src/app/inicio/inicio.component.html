@@ -32,7 +32,7 @@
                             <div class="col-md-12">
                                 <div class="box">
                                     <form name="search">
-                                        <input type="text" class="input" name="txt"
+                                        <input [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()' type="text" id="titulo" class="input" name="txt"
                                             onmouseout="document.search.txt.value = ''">
                                     </form>
                                     <i class="fa fa-search" aria-hidden="true"></i>
