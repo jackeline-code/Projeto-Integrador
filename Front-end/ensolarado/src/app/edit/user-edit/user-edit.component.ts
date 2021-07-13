@@ -35,7 +35,7 @@ export class UserEditComponent implements OnInit {
     this.idUser = this.route.snapshot.params['id']
     this.findByIdUser(this.idUser)
   }
- 
+
   confirmeSenha(event: any) {
     this.confirmarSenha = event.target.value
   }

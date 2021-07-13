@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light cor">
-    <div class="container-fluid">
+    <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -7,31 +7,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto mb-2 mb-lg-0 d-flex align-items-center">
                 <li class="nav-item">
-                    <img src="{{foto}}" alt="Imagem do User" width="50px" height="50px"
-                        class="img-fluid rounded-circle">
+                    <a [routerLink]="['/user-edit',id]">
+                        <img src="{{foto}}" alt="Imagem do User" width="50px" height="50px"
+                            class="img-fluid rounded-circle">
+                    </a>
                 </li>
                 <li class="nav-item pl-3">
                     <p class="m-0 font-weight-bold text-dark fs-16">{{nome}}</p>
-
-                </li>
-                <li class="nav-item pl-3 justify-content-start">
-                    <a [routerLink]="['/user-edit',id]">
-                        <p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
-                    </a>
                 </li>
             </ul>
 
-            <div class="box">
-                <form name="search">
-                    <input type="text" class="input" name="txt" onmouseout="document.search.txt.value = ''">
-                </form>
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </div>
-
-
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ml-5">
-                <button class="btn text-dark" data-toggle="modal" data-target="#novaPostagem">Postagem</button>
-
+                <a class="btn text-dark" data-toggle="modal" data-target="#novaPostagem">Postagem</a>
                 <li class="nav-item">
                     <a (click)='sobre()' class="nav-link text-dark" routerLink="/Sobre">Sobre</a>
                 </li>
@@ -40,9 +27,13 @@
                 </li>
             </ul>
 
-            <li class="nav ms-auto">
-                <img src="https://i.imgur.com/m1eHmXd.jpg" alt="Imagem do User" width="50px" height="50px"
-                    class="img-fluid rounded-circle">
+            <li class="nav ms-auto mr-4 ml-3">
+                <!--  -->
+                <a href="">
+                    <img src="https://i.imgur.com/m1eHmXd.jpg" alt="Imagem do User" width="50px" height="50px"
+                        class="img-fluid rounded-circle">
+                </a>
+                <!--  -->
             </li>
         </div>
     </div>
@@ -53,7 +44,7 @@
 <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content text-dark teste">
+        <div class="modal-content text-warning cor2">
             <div class="modal-header">
                 <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
             </div>
@@ -62,23 +53,23 @@
                 <div class="form-group">
                     <label for="titulo">Título</label>
                     <input [(ngModel)]='postagem.titulo' type="text" style="background-color: rgba(240, 248, 255, 0);"
-                        class="form-control bs borda" id="titulo" placeholder="Digite o título">
+                        class="form-control sombra" id="titulo" placeholder="Digite o título">
                 </div>
                 <div class="form-group">
                     <label for="texto">Texto</label>
                     <textarea [(ngModel)]='postagem.postagem' name="texto"
-                        style="background-color: rgba(240, 248, 255, 0);" class="form-control bs borda" id="texto"
+                        style="background-color: rgba(240, 248, 255, 0);" class="form-control sombra" id="texto"
                         rows="3" placeholder="Digite sua postagem"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="midia">Mídia</label>
                     <input [(ngModel)]='postagem.midia' type="text" style="background-color: rgba(240, 248, 255, 0);"
-                        class="form-control bs borda" id="midia" placeholder="Digite o link da foto ou vídeo">
+                        class="form-control sombra" id="midia" placeholder="Digite o link da foto ou vídeo">
                 </div>
                 <div class="form-group">
                     <label for="tema">Escolha um tema ou Cadastre um novo na aba temas:</label>
                     <select [(ngModel)]='idTema' (change)='findByIdTema()' name="tema" id="tema"
-                        class="form-control bs borda" style="background-color: rgba(240, 248, 255, 0);">
+                        class="form-control sombra" style="background-color: rgba(240, 248, 255, 0);">
                         <option value="{{tema.id}}" *ngFor='let tema of listaTemas'>{{tema.nomeTema}}</option>
                     </select>
                 </div>
@@ -87,7 +78,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-outline-light" data-dismiss="modal"
+                <button type="button" class="btn btn-outline-warning" data-dismiss="modal"
                     (click)='publicar()'>Publicar</button>
             </div>
         </div>

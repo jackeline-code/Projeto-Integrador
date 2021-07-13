@@ -14,15 +14,15 @@ ul.social-network li{
     padding: 10px;
 }
 
-.fa-facebook-square:hover{
+.fa-facebook-square{
     color: #3b5998;
 }
 
-.fa-twitter-square:hover{
+.fa-twitter-square{
     color: #00acee;
 }
 
-.fa-instagram:hover{
+.fa-instagram{
     text-transform: uppercase;
     background: rgb(81,91,212);
     background: linear-gradient(188deg, rgba(81,91,212,1) 10%, rgba(129,52,255,1) 22%, rgba(221,42,123,1) 55%, rgba(254,218,119,1) 85%, rgba(245,133,41,1) 91%);
@@ -31,15 +31,15 @@ ul.social-network li{
     color: transparent;
 }
 
-.fa-linkedin-square:hover{
+.fa-linkedin-square{
     color: #0072b1;
 }
 
-.fa-github-square:hover{
+.fa-github-square{
     color: black;
 }
 
-.gradient{
+.gradient:hover{
     text-transform: uppercase;
     background: rgb(255,145,0);
     background: linear-gradient(90deg, rgba(255,145,0,1) 0%, rgba(253,209,45,1) 100%);
@@ -51,4 +51,13 @@ ul.social-network li{
 .gradient2{
     background: rgb(255,145,0);
     background: linear-gradient(90deg, rgba(255,145,0,1) 0%, rgba(253,209,45,1) 100%);
+}
+
+.text-warning{
+    background: rgb(255,145,0);
+    background: linear-gradient(90deg, rgba(255,145,0,1) 0%, rgba(253,209,45,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
 }

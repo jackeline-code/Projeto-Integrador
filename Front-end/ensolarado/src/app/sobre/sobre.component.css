@@ -12,14 +12,27 @@
     font-weight: bold;
 }
 
-.raio{
-    border-radius: 100px;
-}
-
 .italian{
     text-decoration: solid;
 }
 
-.img-fluid{
+/* .img-fluid{
     border-radius: 50%;
+} */
+
+.caixa{
+    height: 150px;
+    width: 150px;
+    /* border-radius: 50%; */
+    overflow: hidden;
+    position: relative;
+}
+
+.caixa img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
