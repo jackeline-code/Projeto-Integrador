@@ -18,23 +18,20 @@ export class UserEditComponent implements OnInit {
   tipoUsuario: string
 
   constructor(
-
     private authService: AuthService,
     private route: ActivatedRoute,
     private router: Router,
     private alertas: AlertasService
-
-
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
 
-    window.scroll(0,0)
+    window.scroll(0, 0)
 
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }
-    
+
     this.idUser = this.route.snapshot.params['id']
     this.findByIdUser(this.idUser)
   }
@@ -47,7 +44,7 @@ export class UserEditComponent implements OnInit {
     this.tipoUsuario = event.target.value
   }
 
-  atualizar(){
+  atualizar() {
     this.user.tipo = this.tipoUsuario
     if (this.user.senha != this.confirmarSenha) {
       alert('As senhas estão incorretas!')
@@ -55,22 +52,20 @@ export class UserEditComponent implements OnInit {
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
         this.router.navigate(['/inicio'])
-        alert('Usuário atualizado com sucesso, faça o login novamente! ✔')
-        environment.token='' 
-        environment.nomeCompleto=''
-        environment.fotoPerfil=''
-        environment.id=0
-        
+        this.alertas.showAlertInfo('Usuário atualizado com sucesso, faça o login novamente! ✔')
+        environment.token = ''
+        environment.nomeCompleto = ''
+        environment.fotoPerfil = ''
+        environment.id = 0
+
         this.router.navigate(['/entrar'])
       })
     }
   }
 
-  findByIdUser(id: number){
-    this.authService.getByIdUser(id).subscribe((resp:User)=>{
+  findByIdUser(id: number) {
+    this.authService.getByIdUser(id).subscribe((resp: User) => {
       this.user = resp
     })
   }
-
 }
-

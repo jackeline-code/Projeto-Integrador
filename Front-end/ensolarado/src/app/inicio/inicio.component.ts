@@ -44,10 +44,6 @@ export class InicioComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }
-    if(environment.tipo != 'adm'){
-      this.alertas.showAlertInfo('Voce Precisa ser Adm para acessar esta Rota')
-      this.router.navigate(['/inicio'])
-    }
 
     this.temaService.refreshToken()
     this.postagemService.refreshToken()
@@ -76,22 +72,19 @@ export class InicioComponent implements OnInit {
     })
   }
 
-  findByIdUser(){
-    this.auth.getByIdUser(this.idUser).subscribe((resp: User)=>{
+  findByIdUser() {
+    this.auth.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
     })
-  
   }
 
-  findByTituloPostagem(){
-    if(this.tituloPost == ''){
+  findByTituloPostagem() {
+    if (this.tituloPost == '') {
       this.getAllPostagem()
     } else {
-      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) =>{
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
         this.listaPostagem = resp
       })
-
     }
-    
   }
 }

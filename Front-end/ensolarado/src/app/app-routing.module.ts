@@ -11,22 +11,22 @@ import { InicioComponent } from './inicio/inicio.component';
 import { SobreComponent } from './sobre/sobre.component';
 
 const routes: Routes = [
-  {path:'', redirectTo: 'entrar', pathMatch: 'full'},
-  {path: 'entrar', component: EntrarComponent},
-  {path: 'cadastrar', component: CadastrarComponent},
+  { path: '', redirectTo: 'entrar', pathMatch: 'full' },
+  { path: 'entrar', component: EntrarComponent },
+  { path: 'cadastrar', component: CadastrarComponent },
 
-  {path: "sobre", component: SobreComponent},
-  {path: "inicio", component: InicioComponent},
+  { path: "sobre", component: SobreComponent },
+  { path: "inicio", component: InicioComponent },
 
-  {path: "tema-edit/:id", component: TemaEditComponent},
-  {path: "tema-delete/:id", component: TemaDeleteComponent},
-  {path: "postagem-edit/:id", component: PostagemEditComponent},
-  {path: "postagem-delete/:id", component: PostagemDeleteComponent},
-  {path: "user-edit/:id", component: UserEditComponent}
+  { path: "tema-edit/:id", component: TemaEditComponent },
+  { path: "tema-delete/:id", component: TemaDeleteComponent },
+  { path: "postagem-edit/:id", component: PostagemEditComponent },
+  { path: "postagem-delete/:id", component: PostagemDeleteComponent },
+  { path: "user-edit/:id", component: UserEditComponent }
 ];
 
 @NgModule({
-  declarations:[],
+  declarations: [],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

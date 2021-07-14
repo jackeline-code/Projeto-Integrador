@@ -41,6 +41,7 @@
     left: 15%;
     transform: translate(-50%,-50%);
 }
+
 .input {
     padding: 5px;
     width: 40px;
@@ -59,6 +60,7 @@
     background: #27213300;
     border-radius: 10px;
 }
+
 i{
     position: absolute;
     top: 50%;
@@ -68,7 +70,15 @@ i{
     color: rgba(255,145,0,1);
     transition: .2s;
 }
+
+
 .box:hover i{
     opacity: 0;
     z-index: -1;
+}
+
+.card-img-bottom{
+    max-width: 60%;
+    max-height: 60%;
+    margin: auto;
 }

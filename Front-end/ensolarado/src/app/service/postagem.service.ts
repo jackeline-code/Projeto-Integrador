@@ -21,26 +21,26 @@ export class PostagemService {
     }
   }
 
-  getAllPostagens(): Observable<Postagem[]>{
+  getAllPostagens(): Observable<Postagem[]> {
     return this.http.get<Postagem[]>('https://appensolarado2.herokuapp.com/postagem', this.token)
   }
 
-  getByIdPostagens(id: number): Observable<Postagem>{
+  getByIdPostagens(id: number): Observable<Postagem> {
     return this.http.get<Postagem>(`https://appensolarado2.herokuapp.com/postagem/${id}`, this.token)
   }
-  getByTituloPostagem(postagem: string):Observable<Postagem[]>{
-    return this.http.get<Postagem[]>(`https://appensolarado2.herokuapp.com/postagem/postagem/${postagem}`,this.token)
+  getByTituloPostagem(postagem: string): Observable<Postagem[]> {
+    return this.http.get<Postagem[]>(`https://appensolarado2.herokuapp.com/postagem/postagem/${postagem}`, this.token)
   }
 
-  postPostagens(postagem: Postagem): Observable<Postagem>{
+  postPostagens(postagem: Postagem): Observable<Postagem> {
     return this.http.post<Postagem>('https://appensolarado2.herokuapp.com/postagem', postagem, this.token)
   }
 
-  putPostagem(postagem: Postagem): Observable<Postagem>{
+  putPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.put<Postagem>('https://appensolarado2.herokuapp.com/postagem', postagem, this.token)
   }
 
-  deletePostagem(id: number){
+  deletePostagem(id: number) {
     return this.http.delete(`https://appensolarado2.herokuapp.com/postagem/${id}`, this.token)
   }
 }

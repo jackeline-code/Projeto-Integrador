@@ -15,32 +15,32 @@ export class TemaService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
-  refreshToken(){
+  refreshToken() {
     this.token = {
       headers: new HttpHeaders().set('Authorization', environment.token)
     }
   }
 
-  getAllTema(): Observable<Tema[]>{
+  getAllTema(): Observable<Tema[]> {
     return this.http.get<Tema[]>('https://appensolarado2.herokuapp.com/tema', this.token)
   }
 
-  getByIdTema(id: number): Observable<Tema>{
+  getByIdTema(id: number): Observable<Tema> {
     return this.http.get<Tema>(`https://appensolarado2.herokuapp.com/tema/${id}`, this.token)
   }
-  getByNomeTema(nomeTema: string): Observable<Tema[]>{
-    return this.http.get<Tema[]>(`https://appensolarado2.herokuapp.com/tema/nomeTema/${nomeTema}`,this.token)
+  getByNomeTema(nomeTema: string): Observable<Tema[]> {
+    return this.http.get<Tema[]>(`https://appensolarado2.herokuapp.com/tema/nomeTema/${nomeTema}`, this.token)
   }
 
-  postTema(tema: Tema): Observable<Tema>{
+  postTema(tema: Tema): Observable<Tema> {
     return this.http.post<Tema>('https://appensolarado2.herokuapp.com/tema', tema, this.token)
   }
 
-  putTema(tema: Tema): Observable<Tema>{
+  putTema(tema: Tema): Observable<Tema> {
     return this.http.put<Tema>('https://appensolarado2.herokuapp.com/tema', tema, this.token)
   }
 
-  deleteTema(id: number){
+  deleteTema(id: number) {
     return this.http.delete(`https://appensolarado2.herokuapp.com/tema/${id}`, this.token)
-  }  
+  }
 }

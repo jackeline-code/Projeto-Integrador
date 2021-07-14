@@ -13,7 +13,7 @@ export class SobreComponent implements OnInit {
   ngOnInit() {
   }
 
-  voltar(){
+  voltar() {
     this.router.navigate(['/inicio'])
   }
 }

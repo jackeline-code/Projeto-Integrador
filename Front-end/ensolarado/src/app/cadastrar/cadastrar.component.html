@@ -6,54 +6,56 @@
 
                 <div class="form-group">
                     <label for="nomeCompleto">Nome Completo</label>
-                    <input [(ngModel)]='user.nomeCompleto' type="name" class="form-control sombra" name="nomeCompleto" id="nomeCompleto"
-                        placeholder="Digite seu Nome Completo">
+                    <input [(ngModel)]='user.nomeCompleto' type="name" class="form-control sombra" name="nomeCompleto"
+                        id="nomeCompleto" placeholder="Digite seu Nome Completo">
                 </div>
 
                 <div class="form-group">
                     <label for="usuario">Usuário</label>
-                    <input [(ngModel)]='user.usuario' type="text" class="form-control sombra" name="usuario" id="usuario"
-                        placeholder="Digite seu Usuário">
+                    <input [(ngModel)]='user.usuario' type="text" class="form-control sombra" name="usuario"
+                        id="usuario" placeholder="Digite seu Usuário">
                 </div>
 
                 <div class="form-group">
                     <label for="senha">Senha</label>
-                    <input (input)='confirmSenha($event)' 
-                    type="password" class="form-control sombra" name="senha" id="senha" placeholder="Digite sua Senha">
+                    <input (input)='confirmSenha($event)' type="password" class="form-control sombra" name="senha"
+                        id="senha" placeholder="Digite sua Senha">
                 </div>
 
                 <div class="form-group">
                     <label for="confirmSenha">Confirme Senha</label>
-                    <input [(ngModel)]='user.senha' type="password" class="form-control sombra" name="confirmSenha" id="confirmSenha"
-                        placeholder="Confirme sua Senha">
+                    <input [(ngModel)]='user.senha' type="password" class="form-control sombra" name="confirmSenha"
+                        id="confirmSenha" placeholder="Confirme sua Senha">
                 </div>
 
                 <div class="form-group">
                     <label for="foto">Link Foto</label>
-                    <input [(ngModel)]='user.fotoPerfil' type="text" class="form-control sombra" name="foto" id="foto" 
-                    placeholder="Digite seu link de foto">
+                    <input [(ngModel)]='user.fotoPerfil' type="text" class="form-control sombra" name="foto" id="foto"
+                        placeholder="Digite seu link de foto">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input [(ngModel)]='user.email' type="text" class="form-control sombra" name="email" id="email" placeholder="Digite seu E-mail">
+                    <input [(ngModel)]='user.email' type="text" class="form-control sombra" name="email" id="email"
+                        placeholder="Digite seu E-mail">
                 </div>
 
                 <div class="form-group">
                     <label for="endereco">Endereço</label>
-                    <input [(ngModel)]='user.endereco' type="text" class="form-control sombra" name="endereco" id="endereco"
-                        placeholder="Digite seu Endereco">
+                    <input [(ngModel)]='user.endereco' type="text" class="form-control sombra" name="endereco"
+                        id="endereco" placeholder="Digite seu Endereco">
                 </div>
 
                 <div class="form-group">
                     <label for="telefone">Número de Telefone</label>
-                    <input [(ngModel)]='user.numTelefone' type="text" class="form-control sombra" name="telefone" id="telefone"
-                        placeholder="Digite seu Telefone">
+                    <input [(ngModel)]='user.numTelefone' type="text" class="form-control sombra" name="telefone"
+                        id="telefone" placeholder="Digite seu Telefone">
                 </div>
 
                 <div class="form-group">
                     <label for="nascimento">Data de Nascimento</label>
-                    <input [(ngModel)]='user.dataNascimento' type="date" class="form-control sombra" name="nascimento" id="nascimento">
+                    <input [(ngModel)]='user.dataNascimento' type="date" class="form-control sombra" name="nascimento"
+                        id="nascimento">
                 </div>
 
                 <div class="form-group">
@@ -79,7 +81,7 @@
                     <button class="btn btn-outline-dark mr-4" type="submit" routerLink="/entrar">
                         Cancelar
                     </button>
-                    <button class="btn btn-outline-warning" type="submit" (click)= 'cadastrar()'>
+                    <button class="btn btn-outline-warning" type="submit" (click)='cadastrar()'>
                         Cadastrar
                     </button>
                 </div>

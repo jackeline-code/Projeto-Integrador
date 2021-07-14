@@ -28,3 +28,20 @@
     background: rgb(255,145,0);
     background: linear-gradient(90deg, rgba(255,145,0,1) 0%, rgba(253,209,45,1) 100%);
 }
+
+.fotoEdit{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.fotoEdit a img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
