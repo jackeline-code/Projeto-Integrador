@@ -1,55 +1,46 @@
-<div class="container-fluid bg">
-    <div class="col-md-12">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-4 border cor1 raio">
-                <h1 class="text-center mb-3 p-3">Cadastrar</h1>
+<div class="container-fluid bg p-0">
+    <div class="col-md-12 d-flex justify-content-center align-items-center h-100 bggradient container-fluid">
+            <div class="col-md-5 border cor1 raio mt-5 mb-4">
+                <h1 class="text-center mb-3 p-3">Cadastro</h1>
 
                 <div class="form-group">
-                    <label for="nomeCompleto">Nome Completo</label>
                     <input [(ngModel)]='user.nomeCompleto' type="name" class="form-control sombra" name="nomeCompleto"
                         id="nomeCompleto" placeholder="Digite seu Nome Completo">
                 </div>
 
                 <div class="form-group">
-                    <label for="usuario">Usuário</label>
                     <input [(ngModel)]='user.usuario' type="text" class="form-control sombra" name="usuario"
                         id="usuario" placeholder="Digite seu Usuário">
                 </div>
 
                 <div class="form-group">
-                    <label for="senha">Senha</label>
                     <input (input)='confirmSenha($event)' type="password" class="form-control sombra" name="senha"
                         id="senha" placeholder="Digite sua Senha">
                 </div>
 
                 <div class="form-group">
-                    <label for="confirmSenha">Confirme Senha</label>
                     <input [(ngModel)]='user.senha' type="password" class="form-control sombra" name="confirmSenha"
                         id="confirmSenha" placeholder="Confirme sua Senha">
                 </div>
 
                 <div class="form-group">
-                    <label for="foto">Link Foto</label>
                     <input [(ngModel)]='user.fotoPerfil' type="text" class="form-control sombra" name="foto" id="foto"
-                        placeholder="Digite seu link de foto">
+                        placeholder="Digite seu Link de Foto">
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email</label>
                     <input [(ngModel)]='user.email' type="text" class="form-control sombra" name="email" id="email"
                         placeholder="Digite seu E-mail">
                 </div>
 
                 <div class="form-group">
-                    <label for="endereco">Endereço</label>
                     <input [(ngModel)]='user.endereco' type="text" class="form-control sombra" name="endereco"
-                        id="endereco" placeholder="Digite seu Endereco">
+                        id="endereco" placeholder="Digite seu Endereço completo">
                 </div>
 
                 <div class="form-group">
-                    <label for="telefone">Número de Telefone</label>
                     <input [(ngModel)]='user.numTelefone' type="text" class="form-control sombra" name="telefone"
-                        id="telefone" placeholder="Digite seu Telefone">
+                        id="telefone" placeholder="Digite seu Telefone - ex. DDD número">
                 </div>
 
                 <div class="form-group">
@@ -59,7 +50,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="genero">Genero</label>
                     <select name="genero" id="genero" class="form-control sombra">
                         <option>Genêro:</option>
                         <option value="Feminino">Feminino</option>
@@ -69,7 +59,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="tipo">Tipo de Usuário</label>
                     <select name="tipo" id="tipo" class="form-control sombra" (change)='tipoUser($event)'>
                         <option>Selecione um tipo de usuário:</option>
                         <option value="normal">Normal</option>
@@ -77,7 +66,7 @@
                     </select>
                 </div>
 
-                <div class="d-flex justify-content-end p-3">
+                <div class="d-flex justify-content-center p-3">
                     <button class="btn btn-outline-dark mr-4" type="submit" routerLink="/entrar">
                         Cancelar
                     </button>
@@ -86,6 +75,6 @@
                     </button>
                 </div>
             </div>
-        </div>
+    
     </div>
 </div>
